@@ -11,10 +11,10 @@ def tokenizer(sentence):
     stop_words = spacy.lang.en.stop_words.STOP_WORDS
 
     # Load English tokenizer, tagger, parser, NER and word vectors
-    parser = nlp()
+    #parser = nlp()
 
     # Creating our token object, which is used to create documents with linguistic annotations.
-    mytokens = parser(sentence)
+    mytokens = nlp(sentence)
 
     # Lemmatizing each token and converting each token into lowercase
     mytokens = [word.lemma_.lower().strip() if word.lemma_ != "-PRON-" else word.lower_ for word in mytokens]
