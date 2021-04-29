@@ -504,7 +504,7 @@ if st.sidebar.checkbox('Natural language processing', key=10):
 	    # Load English tokenizer, tagger, parser, NER and word vectors
 	    parser = English()
 	    # Creating our token object, which is used to create documents with linguistic annotations.
-	    mytokens = parser(sentence)
+	    mytokens = nlp(sentence)
 
 	    # Lemmatizing each token and converting each token into lowercase
 	    mytokens = [word.lemma_.lower().strip() if word.lemma_ != "-PRON-" else word.lower_ for word in mytokens]
